@@ -1,11 +1,10 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { colors } from '../style/global';
 
 export default function CustomButton({ title, onPress, color }) {
   return (
     <TouchableOpacity 
-      style={[styles.button, { backgroundColor: color || colors.primaryDark }]} 
+      style={[styles.button, { backgroundColor: color || colors.primary }]} 
       onPress={onPress}
       activeOpacity={0.8}
     >
@@ -27,5 +26,6 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 15,
     fontWeight: 'bold',
+    fontFamily: 'Avantgarde, "TeX Gyre Adventor", "URW Gothic L", sans-serif',
   },
 });

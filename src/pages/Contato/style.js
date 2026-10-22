@@ -1,36 +1,122 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../style/global';
 
+const FONT_FAMILY = 'Avantgarde, "TeX Gyre Adventor", "URW Gothic L", sans-serif';
+
 export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
+  },
+  content: {
+    flex: 1,
     padding: 20,
-    justifyContent: 'center',
   },
   card: {
     backgroundColor: colors.white,
-    padding: 20,
     borderRadius: 16,
+    padding: 20,
     borderWidth: 1,
-    borderColor: colors.secondary,
+    borderColor: '#E2E8F0',
+    marginBottom: 20,
+    elevation: 2,
   },
-  title: {
-    fontSize: 22,
+  companyName: {
+    fontSize: 20,
     fontWeight: 'bold',
-    color: colors.primaryDark,
-    marginBottom: 10,
+    color: colors.primary,
+    fontFamily: FONT_FAMILY,
+    marginBottom: 16,
+    borderBottomWidth: 2,
+    borderBottomColor: colors.secondary,
+    paddingBottom: 4,
   },
-  text: {
+  infoBox: {
+    marginBottom: 12,
+  },
+  infoLabel: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: colors.secondary,
+    fontFamily: FONT_FAMILY,
+    marginBottom: 2,
+  },
+  infoText: {
     fontSize: 14,
     color: colors.textDark,
-    marginBottom: 8,
+    fontFamily: FONT_FAMILY,
+    lineHeight: 20,
   },
-  bold: {
+  sectionTitle: {
+    fontSize: 18,
     fontWeight: 'bold',
-    color: colors.primaryDark,
+    color: colors.primary,
+    fontFamily: FONT_FAMILY,
+    marginBottom: 16,
   },
-  buttonBox: {
-    marginTop: 15,
+  form: {
+    width: '100%',
+  },
+  textAreaInput: {
+    width: '100%',
+    borderWidth: 1.5,
+    borderColor: colors.primary,
+    borderRadius: 8,
+    padding: 10,
+    backgroundColor: colors.white,
+    color: colors.textDark,
+    fontSize: 14,
+    fontFamily: FONT_FAMILY,
+    height: 100,
+    textAlignVertical: 'top',
+    marginBottom: 12,
+  },
+  textAreaLabel: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: colors.textDark,
+    marginBottom: 4,
+    fontFamily: FONT_FAMILY,
+  },
+  successText: {
+    color: '#2E7D32',
+    fontSize: 13,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 12,
+    backgroundColor: '#E8F5E9',
+    padding: 10,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#C8E6C9',
+    fontFamily: FONT_FAMILY,
+  },
+  errorText: {
+    color: colors.errorRed,
+    fontSize: 13,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 12,
+    backgroundColor: '#FFEBEE',
+    padding: 10,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#FFCDD2',
+    fontFamily: FONT_FAMILY,
+  },
+  socialBox: {
+    backgroundColor: colors.white,
+    borderRadius: 16,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#E2E8F0',
+    marginBottom: 24,
+    elevation: 2,
+  },
+  socialText: {
+    fontSize: 14,
+    color: colors.textDark,
+    fontFamily: FONT_FAMILY,
+    lineHeight: 22,
   },
 });

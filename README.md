@@ -1,56 +1,112 @@
-# Welcome to your Expo app 👋
+AgenciaDeViagens - ViajeMais
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Nome: Ana carolina Vieira Santos
 
-## Get started
+Nome da Aplicação
+CREDENCIAIS: EMAIL/USUÁRIO: aluno
+             SENHA: 123456  
+ViajeMais - Agência de Viagens
 
-1. Install dependencies
+Descrição Resumida
+O ViajeMais é um aplicativo mobile desenvolvido para uma agência de turismo fictícia. A aplicação permite ao usuário realizar autenticação de acesso, navegar por destinos em destaque na tela inicial, conhecer os pilares institucionais da empresa e entrar em contato direto com a equipe de suporte através de formulários e canais de atendimento.
 
-   ```bash
-   npm install
-   ```
+Tecnologia e Frameworks Utilizados
+React Native (Interface de usuário)
 
-2. Start the app
+Expo (Ambiente de desenvolvimento e bundling)
 
-   ```bash
-   npx expo start
-   ```
+JavaScript (ES6+)
 
-In the output, you'll find options to open the app in a
+StyleSheet Module (Estilização nativa modularizada)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Instruções para Executar o Projeto
+Clonar o repositório:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Bash
+git clone https://github.com/c44rolina/AgenciaDeViagens.git
+Acessar a pasta do projeto:
 
-## Get a fresh project
+Bash
+cd AgenciaDeViagens
+Instalar as dependências:
 
-When you're ready, run:
+Bash
+npm install
+Executar a aplicação com Expo:
 
-```bash
-npm run reset-project
-```
+Bash
+npx expo start -c
+Visualizar no navegador ou dispositivo:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Pressione w no terminal para abrir no navegador web.
 
-### Other setup steps
+Ou escaneie o código QR utilizando o aplicativo Expo Go no seu dispositivo móvel.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Credenciais Utilizadas para Teste
+Para realizar o login na aplicação, utilize as seguintes credenciais padrão:
 
-## Learn more
+Usuário: aluno
 
-To learn more about developing your project with Expo, look at the following resources:
+Senha: 123456
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Estrutura Resumida dos Diretórios
+Plaintext
+AgenciaDeViagens/
+├── assets/
+│   └── images/          # Logotipos e imagens dos pacotes turísticos
+├── src/
+│   ├── componentes/     # Componentes reutilizáveis (CustomInput, CustomButton, CustomToolbar, CustomBottomBar)
+│   ├── pages/           # Telas da aplicação (Login, Home, Sobre, Contato)
+│   └── style/           # Configurações globais de estilo e paleta de cores
+├── App.js               # Gerenciamento de rotas por estado e estrutura principal
+├── index.js             # Ponto de entrada do registro do Expo
+├── package.json         # Dependências e scripts do projeto
+└── README.md            # Documentação do projeto
+Funcionalidades Implementadas
+Autenticação de Usuário (Tela Login):
 
-## Join the community
+Validação de campos obrigatórios com mensagens de aviso inline.
 
-Join our community of developers creating universal apps.
+Verificação de credenciais de acesso locais.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Botão para limpar campos digitados.
+
+Exibição de logo institucional dinâmico.
+
+Navegação Modular:
+
+Alternância entre páginas controlada por estados nativos em App.js.
+
+Toolbar superior personalizada com opção de retorno (Voltar) e encerramento de sessão (Sair).
+
+Toolbar inferior (Bottom Bar) para acesso rápido às páginas Home, Sobre e Contato.
+
+Vitrine de Destinos (Tela Home):
+
+Mensagem de boas-vindas customizada.
+
+Cards de pacotes turísticos em destaque com suporte a imagens locais e preços.
+
+Informações Institucionais (Tela Sobre):
+
+Apresentação da empresa, versão da aplicação e nota do projeto acadêmico.
+
+Detalhamento de Missão, Visão e Valores.
+
+Atendimento e Suporte (Tela Contato):
+
+Exibição de canais de atendimento, endereço e horário de funcionamento.
+
+Formulário funcional para envio de mensagens com validação de campos.
+
+Links para redes sociais da empresa
+
+IMAGENS DA TELAS: 
+
+LOGIN: ![LOGIN](image.png)
+
+HOME: ![HOME](image-1.png), ![HOME](image-2.png)
+
+SOBRE: ![SOBRE](image-3.png) ![SOBRE](image-4.png)
+
+CONTATO:![CONTATO](image-5.png), ![CONTATO](image-6.png)

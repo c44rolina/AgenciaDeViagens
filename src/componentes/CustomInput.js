@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: colors.textDark,
     marginBottom: 4,
+    fontFamily: 'Avantgarde, "TeX Gyre Adventor", "URW Gothic L", sans-serif',
   },
   input: {
     width: '100%',
@@ -38,5 +39,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     color: colors.textDark,
     fontSize: 14,
+    fontFamily: 'Avantgarde, "TeX Gyre Adventor", "URW Gothic L", sans-serif',
   },
 });

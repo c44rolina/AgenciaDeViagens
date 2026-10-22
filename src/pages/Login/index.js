@@ -1,66 +1,97 @@
 import React, { useState } from 'react';
-import { View, Text, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, Image } from 'react-native';
+
 import styles from './style';
 import { colors } from '../../style/global';
 import CustomInput from '../../componentes/CustomInput';
 import CustomButton from '../../componentes/CustomButton';
-export default function Login() {
-  const navigation = useNavigation();
+
+export default function Login({ onLoginSuccess }) {
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
+  const [mensagemErro, setMensagemErro] = useState('');
 
   const USER_VALIDO = 'aluno';
   const SENHA_VALIDA = '123456';
 
   const handleLogin = () => {
-    if (!usuario.trim()) {
-      Alert.alert('Atenção', 'Informe o seu usuário.');
-      return;
-    }
-    if (!senha.trim()) {
-      Alert.alert('Atenção', 'Informe a sua senha.');
+    setMensagemErro('');
+
+   
+    if (!usuario.trim() || !senha.trim()) {
+      setMensagemErro('Por favor, preencha todos os campos para continuar.');
       return;
     }
 
+  
     if (usuario === USER_VALIDO && senha === SENHA_VALIDA) {
       setUsuario('');
       setSenha('');
-      navigation.navigate('Home');
+      setMensagemErro('');
+      if (onLoginSuccess) onLoginSuccess();
     } else {
-      Alert.alert('Erro de Acesso', 'Usuário ou senha incorretos.');
+      setMensagemErro('Usuário ou senha incorretos. Tente novamente.');
     }
   };
 
   const handleLimpar = () => {
     setUsuario('');
     setSenha('');
+    setMensagemErro('');
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}>ViajeMais ✈️</Text>
-        <Text style={styles.subtitle}>Acesse a sua conta para planejar a sua próxima viagem</Text>
-
-        <CustomInput
-          label="Usuário:"
-          placeholder="Digite: aluno"
-          value={usuario}
-          onChangeText={setUsuario}
+        <Image 
+          source={require('../../../assets/images/logo.png')} 
+          style={styles.logoImage} 
         />
 
-        <CustomInput
-          label="Senha:"
-          placeholder="Digite: 123456"
-          secureTextEntry
-          value={senha}
-          onChangeText={setSenha}
-        />
+        <Text style={styles.title}>Acesse a sua conta</Text>
+        <Text style={styles.description}>
+          Planeie as suas próximas férias com as melhores ofertas.
+        </Text>
 
-        <View style={styles.buttonGroup}>
-          <CustomButton title="Entrar na Passagem" color={colors.primaryDark} onPress={handleLogin} />
-          <CustomButton title="Limpar Dados" color="#6c757d" onPress={handleLimpar} />
+        <View style={styles.form}>
+          <CustomInput
+            label="Usuário ou E-mail:"
+            placeholder="Digite seu usuário ou e-mail"
+            value={usuario}
+            onChangeText={(text) => {
+              setUsuario(text);
+              if (mensagemErro) setMensagemErro('');
+            }}
+            autoCapitalize="none"
+          />
+
+          <CustomInput
+            label="Senha:"
+            placeholder="Digite sua senha"
+            secureTextEntry={true}
+            value={senha}
+            onChangeText={(text) => {
+              setSenha(text);
+              if (mensagemErro) setMensagemErro('');
+            }}
+          />
+
+          {mensagemErro !== '' && (
+            <Text style={styles.errorText}>{mensagemErro}</Text>
+          )}
+
+          <View style={styles.buttonGroup}>
+            <CustomButton
+              title="Entrar"
+              color={colors.primary}
+              onPress={handleLogin}
+            />
+            <CustomButton
+              title="Limpar"
+              color={colors.secondary}
+              onPress={handleLimpar}
+            />
+          </View>
         </View>
       </View>
     </View>

@@ -1,114 +1,59 @@
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 
-import { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Login from './src/pages/Login';
+import Home from './src/pages/Home';
+import Sobre from './src/pages/Sobre';
+import Contato from './src/pages/Contato';
 
 export default function App() {
-  const [tela, setTela] = useState('Login');
+ 
+  const [telaAtual, setTelaAtual] = useState('Login');
+
+  
+  const handleLoginSuccess = () => setTelaAtual('Home');
+  const handleNavigateHome = () => setTelaAtual('Home');
+  const handleNavigateSobre = () => setTelaAtual('Sobre');
+  const handleNavigateContato = () => setTelaAtual('Contato');
+  const handleLogout = () => setTelaAtual('Login');
 
   return (
     <View style={styles.container}>
-      {tela === 'Login' && (
-        <>
-          <Text style={styles.titulo}>ViajeMais</Text>
-          <Text style={styles.texto}>
-            Encontre seu próximo destino!
-          </Text>
-
-          <TouchableOpacity
-            style={styles.botao}
-            onPress={() => setTela('Home')}
-          >
-            <Text style={styles.textoBotao}>Entrar</Text>
-          </TouchableOpacity>
-        </>
+      {telaAtual === 'Login' && (
+        <Login onLoginSuccess={handleLoginSuccess} />
       )}
 
-      {tela === 'Home' && (
-        <>
-          <Text style={styles.titulo}>Início</Text>
-          <Text style={styles.texto}>
-            Bem-vindo ao ViajeMais!
-          </Text>
-
-          <TouchableOpacity
-            style={styles.botao}
-            onPress={() => setTela('Sobre')}
-          >
-            <Text style={styles.textoBotao}>Sobre a agência</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.botao}
-            onPress={() => setTela('Contato')}
-          >
-            <Text style={styles.textoBotao}>Contato</Text>
-          </TouchableOpacity>
-        </>
+      {telaAtual === 'Home' && (
+        <Home 
+          onNavigateSobre={handleNavigateSobre}
+          onNavigateContato={handleNavigateContato}
+          onLogout={handleLogout}
+        />
       )}
 
-      {tela === 'Sobre' && (
-        <>
-          <Text style={styles.titulo}>Nossa Agência</Text>
-          <Text style={styles.texto}>
-            A ViajeMais ajuda você a planejar suas viagens.
-          </Text>
-          <BotaoVoltar onPress={() => setTela('Home')} />
-        </>
+      {telaAtual === 'Sobre' && (
+        <Sobre 
+          onNavigateHome={handleNavigateHome}
+          onNavigateSobre={handleNavigateSobre}
+          onNavigateContato={handleNavigateContato}
+          onLogout={handleLogout}
+        />
       )}
 
-      {tela === 'Contato' && (
-        <>
-          <Text style={styles.titulo}>Atendimento</Text>
-          <Text style={styles.texto}>
-            Entre em contato com a equipe ViajeMais.
-          </Text>
-          <BotaoVoltar onPress={() => setTela('Home')} />
-        </>
+      {telaAtual === 'Contato' && (
+        <Contato 
+          onNavigateHome={handleNavigateHome}
+          onNavigateSobre={handleNavigateSobre}
+          onNavigateContato={handleNavigateContato}
+          onLogout={handleLogout}
+        />
       )}
     </View>
-  );
-}
-
-function BotaoVoltar({ onPress }) {
-  return (
-    <TouchableOpacity style={styles.botao} onPress={onPress}>
-      <Text style={styles.textoBotao}>Voltar ao início</Text>
-    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff',
-    padding: 24,
-  },
-  titulo: {
-    color: '#0077b6',
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  texto: {
-    color: '#333333',
-    fontSize: 18,
-    textAlign: 'center',
-    marginBottom: 24,
-  },
-  botao: {
-    backgroundColor: '#0077b6',
-    paddingVertical: 14,
-    paddingHorizontal: 28,
-    borderRadius: 8,
-    marginVertical: 8,
-    minWidth: 200,
-    alignItems: 'center',
-  },
-  textoBotao: {
-    color: '#ffffff',
-    fontSize: 16,
-    fontWeight: 'bold',
   },
 });
