@@ -3,8 +3,7 @@ AgenciaDeViagens - ViajeMais
 Nome: Ana carolina Vieira Santos
 
 Nome da Aplicação
-CREDENCIAIS: EMAIL/USUÁRIO: aluno
-             SENHA: 123456  
+  
 ViajeMais - Agência de Viagens
 
 Descrição Resumida
@@ -109,4 +108,4 @@ HOME: ![HOME](image-1.png), ![HOME](image-2.png)
 
 SOBRE: ![SOBRE](image-3.png) ![SOBRE](image-4.png)
 
-CONTATO:![CONTATO](image-5.png), ![CONTATO](image-6.png)
+CONTATO:![CONTATO](image-5.png), ![](image-6.png)
